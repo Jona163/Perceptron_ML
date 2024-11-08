@@ -62,3 +62,8 @@ if __name__ == "__main__":
     def accuracy(y_true, y_pred):
         accuracy = np.sum(y_true == y_pred) / len(y_true)
         return accuracy
+
+    # Generar un conjunto de datos de prueba
+    X, y = datasets.make_blobs(
+        n_samples=150, n_features=2, centers=2, cluster_std=1.05, random_state=2
+    )
