@@ -81,3 +81,10 @@ if __name__ == "__main__":
 
     # Imprimir la precisión del perceptrón
     print("Precisión de la clasificación del Perceptrón:", accuracy(y_test, predictions))
+
+    # Visualización de los resultados
+    fig = plt.figure()
+    ax = fig.add_subplot(1, 1, 1)
+    
+    # Graficar las muestras de entrenamiento
+    plt.scatter(X_train[:, 0], X_train[:, 1], marker="o", c=y_train)
