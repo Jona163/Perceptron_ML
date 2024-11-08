@@ -31,3 +31,22 @@ class Perceptron:
 
         # Asegurar que las etiquetas sean 0 o 1
         y_ = np.where(y > 0 , 1, 0)
+
+        # Aprendizaje de los pesos
+        for _ in range(self.n_iters):
+            for idx, x_i in enumerate(X):
+                # Cálculo de la salida lineal
+                linear_output = np.dot(x_i, self.weights) + self.bias
+                y_predicted = self.activation_func(linear_output)
+
+                # Regla de actualización del perceptrón
+                update = self.lr * (y_[idx] - y_predicted)
+                self.weights += update * x_i  # Actualización de los pesos
+                self.bias += update           # Actualización del sesgo
+
+    # Método para predecir
+    def predict(self, X):
+        # Cálculo de la salida lineal y predicción
+        linear_output = np.dot(X, self.weights) + self.bias
+        y_predicted = self.activation_func(linear_output)
+        return y_predicted
