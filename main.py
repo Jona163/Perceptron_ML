@@ -88,3 +88,10 @@ if __name__ == "__main__":
     
     # Graficar las muestras de entrenamiento
     plt.scatter(X_train[:, 0], X_train[:, 1], marker="o", c=y_train)
+
+    # Calcular la línea de decisión del perceptrón
+    x0_1 = np.amin(X_train[:, 0])
+    x0_2 = np.amax(X_train[:, 0])
+
+    x1_1 = (-p.weights[0] * x0_1 - p.bias) / p.weights[1]
+    x1_2 = (-p.weights[0] * x0_2 - p.bias) / p.weights[1]
