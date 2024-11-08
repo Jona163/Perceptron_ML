@@ -67,3 +67,11 @@ if __name__ == "__main__":
     X, y = datasets.make_blobs(
         n_samples=150, n_features=2, centers=2, cluster_std=1.05, random_state=2
     )
+  # Dividir los datos en entrenamiento y prueba
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=123
+    )
+
+    # Inicializar y entrenar el perceptrón
+    p = Perceptron(learning_rate=0.01, n_iters=1000)
+    p.fit(X_train, y_train)
