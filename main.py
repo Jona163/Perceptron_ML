@@ -50,3 +50,15 @@ class Perceptron:
         linear_output = np.dot(X, self.weights) + self.bias
         y_predicted = self.activation_func(linear_output)
         return y_predicted
+
+# Pruebas del perceptrón
+if __name__ == "__main__":
+    # Imports
+    import matplotlib.pyplot as plt
+    from sklearn.model_selection import train_test_split
+    from sklearn import datasets
+
+    # Función para calcular la precisión de las predicciones
+    def accuracy(y_true, y_pred):
+        accuracy = np.sum(y_true == y_pred) / len(y_true)
+        return accuracy
