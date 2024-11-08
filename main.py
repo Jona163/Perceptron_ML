@@ -20,3 +20,17 @@ class Perceptron:
         self.activation_func = unit_step_func
         self.weights = None
         self.bias = None
+  def fit(self, X, y):
+        """Entrena el perceptrón con los datos X e y."""
+        n_samples, n_features = X.shape
+        self.weights = np.zeros(n_features)
+        self.bias = 0
+
+        # Asegurar que las etiquetas sean binarias (0 o 1)
+        y_ = np.where(y > 0, 1, 0)
+
+        # Actualización de pesos y sesgo en cada iteración
+        for _ in range(self.n_iters):
+            for idx, x_i in enumerate(X):
+                linear_output = np.dot(x_i, self.weights) + self.bias
+                y_predicted = self.activation_func(linear_output)
