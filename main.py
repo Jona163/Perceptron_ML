@@ -95,3 +95,14 @@ if __name__ == "__main__":
 
     x1_1 = (-p.weights[0] * x0_1 - p.bias) / p.weights[1]
     x1_2 = (-p.weights[0] * x0_2 - p.bias) / p.weights[1]
+
+    # Graficar la línea de decisión
+    ax.plot([x0_1, x0_2], [x1_1, x1_2], "k")
+
+    # Ajustar los límites del eje y para mejor visualización
+    ymin = np.amin(X_train[:, 1])
+    ymax = np.amax(X_train[:, 1])
+    ax.set_ylim([ymin - 3, ymax + 3])
+
+    # Mostrar la gráfica
+    plt.show()
