@@ -20,3 +20,11 @@ class Perceptron:
         self.activation_func = unit_step_func  # Función de activación (escalón unitario)
         self.weights = None      # Pesos (inicialmente indefinidos)
         self.bias = None         # Sesgo (inicialmente indefinido)
+
+    # Método para entrenar el perceptrón
+    def fit(self, X, y):
+        n_samples, n_features = X.shape  # Obtener el número de muestras y características
+
+        # Inicializar los pesos y el sesgo a 0
+        self.weights = np.zeros(n_features)
+        self.bias = 0
