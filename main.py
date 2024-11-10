@@ -78,3 +78,8 @@ if __name__ == "__main__":
 
     # Ajustar los límites del eje y para mejor visualización
     ax.set_ylim([np.amin(X_train[:, 1]) - 3, np.amax(X_train[:, 1]) + 3])
+
+    plt.title("Simulación de Perceptrón - Línea de Decisión")
+    plt.xlabel("Característica 1")
+    plt.ylabel("Característica 2")
+    plt.show()
