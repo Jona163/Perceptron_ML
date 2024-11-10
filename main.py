@@ -68,3 +68,8 @@ if __name__ == "__main__":
     # Visualización de los resultados y línea de decisión
     fig, ax = plt.subplots()
     ax.scatter(X_train[:, 0], X_train[:, 1], marker="o", c=y_train)
+
+    # Cálculo de la línea de decisión
+    x0_1, x0_2 = np.amin(X_train[:, 0]), np.amax(X_train[:, 0])
+    x1_1 = (-perceptron.weights[0] * x0_1 - perceptron.bias) / perceptron.weights[1]
+    x1_2 = (-perceptron.weights[0] * x0_2 - perceptron.bias) / perceptron.weights[1]
