@@ -40,3 +40,8 @@ class Perceptron:
                 update = self.lr * (y_[idx] - y_predicted)
                 self.weights += update * x_i
                 self.bias += update
+
+    def predict(self, X):
+        """Realiza predicciones para los datos de entrada X."""
+        linear_output = np.dot(X, self.weights) + self.bias
+        return self.activation_func(linear_output)
