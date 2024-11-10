@@ -12,3 +12,6 @@ from sklearn import datasets
 def unit_step_func(x):
     """Función de activación: retorna 1 si x > 0, de lo contrario retorna 0."""
     return np.where(x > 0, 1, 0)
+# Clase Perceptron
+class Perceptron:
+    def __init__(self, learning_rate=0.01, n_iters=1000):
