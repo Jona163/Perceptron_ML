@@ -49,3 +49,7 @@ class Perceptron:
 def accuracy(y_true, y_pred):
     """Calcula la precisión de las predicciones comparando con las etiquetas verdaderas."""
     return np.sum(y_true == y_pred) / len(y_true)
+
+if __name__ == "__main__":
+    # Generación de datos de prueba
+    X, y = datasets.make_blobs(n_samples=150, n_features=2, centers=2, cluster_std=1.05, random_state=2)
