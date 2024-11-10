@@ -21,3 +21,5 @@ class Perceptron:
         self.activation_func = unit_step_func
         self.weights = None
         self.bias = None
+    def fit(self, X, y):
+        """Entrena el perceptrón con los datos X e y."""
