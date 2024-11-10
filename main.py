@@ -29,3 +29,9 @@ class Perceptron:
 
         # Asegurar que las etiquetas sean binarias (0 o 1)
         y_ = np.where(y > 0, 1, 0)
+
+        # Actualización de pesos y sesgo en cada iteración
+        for _ in range(self.n_iters):
+            for idx, x_i in enumerate(X):
+                linear_output = np.dot(x_i, self.weights) + self.bias
+                y_predicted = self.activation_func(linear_output)
