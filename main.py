@@ -45,3 +45,7 @@ class Perceptron:
         """Realiza predicciones para los datos de entrada X."""
         linear_output = np.dot(X, self.weights) + self.bias
         return self.activation_func(linear_output)
+
+def accuracy(y_true, y_pred):
+    """Calcula la precisión de las predicciones comparando con las etiquetas verdaderas."""
+    return np.sum(y_true == y_pred) / len(y_true)
