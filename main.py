@@ -1,5 +1,5 @@
 # Autor: Jonathan Hernández
-# Fecha: 08 noviembre 2024
+# Fecha: 10 noviembre 2024
 # Descripción: Código para una simulación de Perceptrón.
 # GitHub: https://github.com/Jona163
 
@@ -12,7 +12,6 @@ from sklearn import datasets
 def unit_step_func(x):
     """Función de activación: retorna 1 si x > 0, de lo contrario retorna 0."""
     return np.where(x > 0, 1, 0)
-
 # Clase Perceptron
 class Perceptron:
     def __init__(self, learning_rate=0.01, n_iters=1000):
@@ -22,7 +21,6 @@ class Perceptron:
         self.activation_func = unit_step_func
         self.weights = None
         self.bias = None
-
     def fit(self, X, y):
         """Entrena el perceptrón con los datos X e y."""
         n_samples, n_features = X.shape
@@ -55,14 +53,14 @@ def accuracy(y_true, y_pred):
 if __name__ == "__main__":
     # Generación de datos de prueba
     X, y = datasets.make_blobs(n_samples=150, n_features=2, centers=2, cluster_std=1.05, random_state=2)
-    
+  
     # División de datos en entrenamiento y prueba
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=123)
 
     # Inicializar y entrenar el modelo
     perceptron = Perceptron(learning_rate=0.01, n_iters=1000)
     perceptron.fit(X_train, y_train)
-    
+  
     # Predicción y cálculo de precisión
     predictions = perceptron.predict(X_test)
     print("Precisión de la clasificación del Perceptrón:", accuracy(y_test, predictions))
