@@ -18,3 +18,6 @@ class Perceptron:
         """Inicializa el perceptrón con tasa de aprendizaje y número de iteraciones."""
         self.lr = learning_rate
         self.n_iters = n_iters
+        self.activation_func = unit_step_func
+        self.weights = None
+        self.bias = None
