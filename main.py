@@ -26,3 +26,6 @@ class Perceptron:
         n_samples, n_features = X.shape
         self.weights = np.zeros(n_features)
         self.bias = 0
+
+        # Asegurar que las etiquetas sean binarias (0 o 1)
+        y_ = np.where(y > 0, 1, 0)
