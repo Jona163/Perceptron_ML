@@ -60,3 +60,7 @@ if __name__ == "__main__":
     # Inicializar y entrenar el modelo
     perceptron = Perceptron(learning_rate=0.01, n_iters=1000)
     perceptron.fit(X_train, y_train)
+  
+    # Predicción y cálculo de precisión
+    predictions = perceptron.predict(X_test)
+    print("Precisión de la clasificación del Perceptrón:", accuracy(y_test, predictions))
