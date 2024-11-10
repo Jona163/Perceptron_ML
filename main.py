@@ -23,3 +23,6 @@ class Perceptron:
         self.bias = None
     def fit(self, X, y):
         """Entrena el perceptrón con los datos X e y."""
+        n_samples, n_features = X.shape
+        self.weights = np.zeros(n_features)
+        self.bias = 0
