@@ -15,3 +15,6 @@ def unit_step_func(x):
 # Clase Perceptron
 class Perceptron:
     def __init__(self, learning_rate=0.01, n_iters=1000):
+        """Inicializa el perceptrón con tasa de aprendizaje y número de iteraciones."""
+        self.lr = learning_rate
+        self.n_iters = n_iters
