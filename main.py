@@ -75,3 +75,6 @@ if __name__ == "__main__":
     x1_2 = (-perceptron.weights[0] * x0_2 - perceptron.bias) / perceptron.weights[1]
 
     ax.plot([x0_1, x0_2], [x1_1, x1_2], "k")
+
+    # Ajustar los límites del eje y para mejor visualización
+    ax.set_ylim([np.amin(X_train[:, 1]) - 3, np.amax(X_train[:, 1]) + 3])
