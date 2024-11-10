@@ -73,3 +73,5 @@ if __name__ == "__main__":
     x0_1, x0_2 = np.amin(X_train[:, 0]), np.amax(X_train[:, 0])
     x1_1 = (-perceptron.weights[0] * x0_1 - perceptron.bias) / perceptron.weights[1]
     x1_2 = (-perceptron.weights[0] * x0_2 - perceptron.bias) / perceptron.weights[1]
+
+    ax.plot([x0_1, x0_2], [x1_1, x1_2], "k")
