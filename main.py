@@ -64,3 +64,7 @@ if __name__ == "__main__":
     # Predicción y cálculo de precisión
     predictions = perceptron.predict(X_test)
     print("Precisión de la clasificación del Perceptrón:", accuracy(y_test, predictions))
+
+    # Visualización de los resultados y línea de decisión
+    fig, ax = plt.subplots()
+    ax.scatter(X_train[:, 0], X_train[:, 1], marker="o", c=y_train)
